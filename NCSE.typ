@@ -8,14 +8,35 @@
 #show: university-theme.with(
   aspect-ratio: "16-9",
   config-info(
-    title: [Title],
-    subtitle: [Subtitle],
-    author: [Authors],
+    title: [下垂体偶発種について],
+    subtitle: [なんで頭部CT撮ってんだよ！],
+    author: [Nozomi Niimi],
     date: datetime.today(),
-    institution: [Institution],
-    logo: emoji.school,
+    institution: [東京医療センター総合内科],
+    // logo: emoji.school,
   ),
 )
+
+// for tall slide
+#let tall-slide(body) = touying-slide-wrapper(self => {
+  self = utils.merge-dicts(self, config-page(
+    width: 33.867cm,
+    height: 33.867cm,
+  ))
+  touying-slide(self: self, body)
+})
+
+
+// == PEGの倫理的適応
+
+// #tall-slide[
+//   #figure(
+//   image("figure/PEG_rirni_tekiou.jpeg", height: 70%)
+// )
+// ]
+
+
+#show link: underline
 
 #set heading(numbering: numbly("{1}.", default: "1.1"))
 
@@ -29,6 +50,15 @@
 #set align(horizon)
 
 #let lb = linebreak(justify: false)
+
+// 大まかなゲシュタルトとして若年者の #lb 「繰り返す発熱と腹痛(+高CRP)」を忘れない  使用例
+
+#let refs(body) = {
+  set text(size: 8pt)
+  align(right, body)
+}
+
+// #refs("Dysphagia. 2024;39(5):837-845.") 使用例
 
 #set list(marker: ([•], [◦], [🗸]))
 #let list-counter = counter("list")
@@ -54,12 +84,15 @@
 )
 
 // Use #polylux-slide to create a slide and style it using your favourite Typst functions
-#title-slide(authors: ([Nozomi Niimi], [Author B]))
 
+#title-slide(authors: ([Nozomi Niimi]))
 
-= Title
+== 症例 
 
-== First Slide 
+- 79歳女性、自宅内転倒で救急搬送
+- 頭部CTで下垂体腺腫を指摘される
+- 依頼文にて、「偶発的に下垂体腺腫が指摘されておりそちらの精査もお願いします」と
 
-Hello, Touying!
-
+// #link((page: 1, x: 0pt, y: 0pt))[
+//   Go to top
+// ]
