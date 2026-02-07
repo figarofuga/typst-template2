@@ -8,7 +8,7 @@
 #show: university-theme.with(
   aspect-ratio: "16-9",
   config-info(
-    title: [下垂体偶発種について],
+    title: [下垂体偶発腫について],
     subtitle: [なんで頭部CT撮ってんだよ！],
     author: [Nozomi Niimi],
     date: datetime.today(),
@@ -79,7 +79,7 @@
 // for main text
 #set text(
     lang: "ja",  // 英語しか使わない文書では"en"とする（もしくは指定しない）
-    font: ("Calibri", "Noto Serif CJK JP"),  
+    font: ("Calibri", "Noto Sans CJK JP"),
     // font: (日本語文字を含まないフォント, 日本語文字を含むフォント),  となっている
 )
 

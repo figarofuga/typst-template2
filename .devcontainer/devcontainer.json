@@ -5,7 +5,14 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"build": {
         "dockerfile": "Dockerfile" // 相対パス表記
-    }, 
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"myriad-dreamin.tinymist"
+			]
+		}
+	},
 
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
